@@ -105,7 +105,7 @@ def parse_contract_listing(page, last_updated)
     contractor[:contracts] = contractor[:contracts] + ", " + current_contracts.join(', ')
   end
 
-  ScraperWiki.save_sqlite([:abn], contractor, table_name = 'contractors')
+  ScraperWiki.save_sqlite([:name], contractor, table_name = 'contractors')
 end
 
 require 'scraperwiki'
