@@ -116,7 +116,7 @@ domain = "https://tenders.nsw.gov.au"
 start_row = 0
 
 while start_row >= 0
-  index = agent.get("https://tenders.nsw.gov.au/?refine=CN&keyword=westconnex&orderBy=Publish%20Date%20-%20Descending&event=public%2Eadvancedsearch%2Ekeyword&startRow=#{start_row}")
+  index = agent.get("https://tenders.nsw.gov.au/?valuefrom=&departmentuuid=&keyword=&suppliername=&supplierabn=&cn_weekly=&publishto=&valueto=&event=public%2Eadvancedsearch%2EcnStep2&startRow=#{start_row}&category=&multype=archived%2Cclosed%2Cpublished&publishfrom=&cn_id=&piggyback=&agencyStatus=-1&numagencystatus=-1&orderBy=Publish%20Date%20-%20Descending&rfttype=proposed%2Cpublished%2Cclosed%2Carchived&rftid=&contractto=&type=cnEvent&contractfrom=&keywordtypesearch=AllWord&agencyuuid=&postcode=")
   page_contract_listings = index.at('#main-content').css('h2 + table')[1..-1]
 
   if !page_contract_listings.empty?
